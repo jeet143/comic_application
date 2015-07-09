@@ -1,0 +1,52 @@
+extends master
+
+block content
+  .container
+    .jumbtron.text-center
+      
+    
+   
+    .container(ng-controller="characterController")
+      .col-md-12 
+      #right_container
+       
+       #first
+         
+         h4 {{character.main.name}}
+       #second
+         img(src="{{character.main.image.medium_url}}")
+       #third
+        p {{character.main.deck}}
+          a.main(type="submit",  href="character/{{character.main.id}}") Details....
+         
+      #left_container
+       p Enjoy The World Of ComicVine
+        form
+          .form-group
+            input.form-control.text-center(type="text", ng-model="title" placeholder="Insert the superhero name")
+            #not_found
+        
+            if flag=0
+              results not found
+            br
+            button.main(type="submit", ng-click="searchCharacter()") Find Info
+        div.more-results-block(ng-show="comparisons.length > 0")
+          p(ng-show="maxComparisons")
+            i.yellow *only a max of 2 movies can be compared.
+          p
+            i.span /// compare characters
+            hr
+          div(ng-repeat="m in comparisons")
+            p
+              button.btn-xs.btn-primary(ng-click="removeFromCompare($index)") x
+              span {{ m.name }}
+             a.btn.btn-sm.btn-warning(ng-show="comparisons.length == 2", style="color: #FFF; width=100%", href="character/{{comparisons[0].id}}/versus/{{comparisons[1].id}}") compare
+  
+         
+        div.more-results-block(ng-show="character.alternatives.length > 0")
+          p
+            i.span /// more results
+            hr
+          div( ng-repeat="alt in character.alternatives")
+              span(ng-click="subcharacter(alt.name)"){{ alt.name }}
+              button.main(ng-click="addToCompare(alt)") +

@@ -1,0 +1,7 @@
+{
+  "api": {
+    "base": "http://www.comicvine.com/api/characters/?",
+    "api_key": "8a92f9f3a91246bfdd5e43e05652114cdf346455",
+	"format":"json"
+  }
+}

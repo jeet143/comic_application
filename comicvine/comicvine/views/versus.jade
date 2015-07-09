@@ -1,0 +1,40 @@
+extends master
+
+block content
+	.container1(ng-controller="characterVersusController")
+		.container_left
+			.container_up
+				.container_up_right
+				img(src='{{character.mainDetail.results.image.medium_url}}' width='210' height='450')
+				.container_up_left
+					h4 {{character.mainDetail.results.name}}
+					h4 {{character.mainDetail.results.origin.name}} //origin
+					h4 {{character.mainDetail.results.publisher.name}} //publisher
+					p {{character.mainDetail.results.deck}}
+			.container_down
+					h4 # of Powers :
+						.powers(ng-repeat="powers in character.mainDetail.results.powers")
+							div(ng-repeat="powers1 in powers")
+								p{{powers1[name]}}
+						h4 # of Teams :
+						.powers(ng-repeat="Teams in character.mainDetail.results.powers[$index]")
+					h4 # of Friends :
+					.powers(ng-repeat="friends in character.mainDetail.results.character_friends[$index]")
+						p friends.name
+					h4 # of Enemies{{character.mainDetail.results.character_friends[0].name}}
+						p {{character.mainDetail.results.character_friends[0].name}}
+				
+		.container_right
+			.container_up
+				.container_up_right
+				img(src='{{character.challengerDetail.results.image.medium_url}}' width='210' height='450')
+				.container_up_left
+					h4 {{character.challengerDetail.results.name}}
+					h4 {{character.challengerDetail.results.origin.name}} //origin
+					h4 {{character.challengerDetail.results.publisher.name}} //publisher
+					p {{character.challengerDetail.results.deck}}
+			.container_down
+					h4 # of Powers :
+					h4 # of Teams :
+					h4 # of Friends :
+					h4 # of Enemies

@@ -1,0 +1,82 @@
+header {
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	font-size: 26px;
+	background-image: url(logo.jpeg);
+	background-repeat: repeat-x;
+	font-weight:bold;
+	text-transform:uppercase;
+	color:#fff;text-shadow:1px 1px 2px rgba(0,0,0,0.3);
+	font-family: "ar berkley";
+}
+
+header a {
+text-decoration:none;
+color:yellow;	
+}
+
+ul li{
+list-style:none;	
+}
+
+body{
+	margin: 0 auto;
+	padding: 0;
+	color:white;
+	font-size:22px;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+	text-align: center;
+	background-color: black;
+	background-image: url(justice.png);
+	background-repeat: repeat;
+	font-family: "algerian";
+}
+
+body h2{
+color: #ec4b26;
+	font-size: 32px;
+	
+}
+
+input[type='text'] {
+width:250px;
+height:30px;
+color:#999;
+border-radius:10px;
+padding:5px;
+	border:solid 1px #CCC;
+	cursor:pointer;
+	padding-right:10px;
+}
+
+input[type="text"] {
+width:280px;
+
+	border:solid 1px #66bbf7;
+	
+}
+
+.main {
+width:120px;
+height:40px;
+padding:5px;
+border:solid 2px #fff;
+margin-top:30px;
+border-radius:10px;
+font-size:20px;
+color:#fff;
+
+background: red; 
+}
+
+
+img {
+border:solid 4px #fff;
+padding:10px;
+border-radius:30px;
+
+}
+
+
+

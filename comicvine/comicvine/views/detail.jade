@@ -1,0 +1,41 @@
+extends master
+
+block content
+  .container
+    .jumbtron.text-center
+      
+    
+   
+    .container(ng-controller="characterDetailController")
+      .col-md-12 
+      #left_container
+       
+       #first
+         
+         h2 {{character.name}} 
+         h4 {{character.origin.name}} <---//origin detail
+         h4 {{character.publisher.name}} <---//publisher detail
+       #second
+         img(src="{{character.image.medium_url}}" width="250px" height="400px")
+       #third
+        
+          
+         
+      #right_container
+       p hero data
+         #not_found
+        form
+          .form-group
+       p {{character.deck}}
+         button.main(style="width: 100%",ng-click="toggleEnemies()") {{castBtnText || '+ Demonstrate Enemies Toggle'}} 
+         ul(ng-show="displayCast")
+                li.resultList(ng-repeat="alt in character.character_enemies")
+                  a(href='character/{{alt.id}}'){{alt.name}}	   
+         button.main(style="width: 100%",ng-click="toggleFriends()") {{castBtnText0 || '+ Demonstrate Friends Toggle'}} 
+         ul(ng-show="displayFriends")
+                li.resultList( ng-repeat="alt in character.character_friends")
+                    a(href='character/{{alt.id}}'){{alt.name}} 
+         button.main(style="width: 100%",ng-click="togglePowers()") {{castBtnText1 || '+ Demonstrate Powers Toggle'}} 
+         ul(ng-show="displayPowers")			  
+                li.resultList( ng-repeat="alt in character.powers")
+                     a(href='character/{{alt.id}}'){{alt.name}}			  
